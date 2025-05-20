@@ -1,3 +1,7 @@
 function sum(m, n) {
-  // ваш код...
+  if (typeof m !== 'number' || typeof n !== 'number') {
+    throw new TypeError('Оба аргумента должны быть числами');
+  }
+
+  return m + n;
 }
