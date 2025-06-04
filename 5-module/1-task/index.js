@@ -10,6 +10,6 @@ function hideSelf() {
 
   // Добавляем обработчик события click
   button.addEventListener("click", () => {
-    button.setAttribute("hidden", "");
+    button.hidden = true;
   });
 }
