@@ -10,10 +10,6 @@ function toggleText() {
 
   // Добавляем обработчик события click
   button.addEventListener("click", () => {
-    if (text.hasAttribute("hidden")) {
-      text.removeAttribute("hidden");
-    } else {
-      text.setAttribute("hidden", "");
-    }
+    text.hidden = !text.hidden;
   });
 }
