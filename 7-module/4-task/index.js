@@ -174,6 +174,7 @@ export default class StepSlider {
     const newValue = Math.round(clickPercent * segmentCount);
     const leftPercent = clickPercent * 100;
 
+    // Обновление стилей ползунка и прогресса
     this._thumb.style.left = `${leftPercent}%`;
     this._progress.style.width = `${leftPercent}%`;
 
@@ -202,7 +203,10 @@ export default class StepSlider {
     const clickPercent = Math.max(0, Math.min(1, pointerX / width));
     const newValue = Math.round(clickPercent * segmentCount);
 
-    this._setValue(newValue);
+    // Всегда обновляем UI и генерируем событие, даже если значение не изменилось
+    this._value = newValue;
+    this._updateSlider();
+    this._dispatchChangeEvent();
   }
 
   /**
